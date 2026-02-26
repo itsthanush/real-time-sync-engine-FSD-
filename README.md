@@ -211,7 +211,7 @@ server.listen(3000, ...);  // Change 3000 to any port you want
 | Port already in use | Kill the existing process: `lsof -ti:3000 \| xargs kill` |
 
 ---
-Preview
+## Preview
 ![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/18734364f98f8cb37f24f7c7292190339f7e4036/Screen%20Shot%202026-02-26%20at%2010.23.30%20PM.png)
 ![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/5c3893dc77851ef17831a8947d0c30c27ab944bf/Screen%20Shot%202026-02-26%20at%2010.24.33%20PM.png)
 ![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/b7e3eb8d12bd2b51a38f6d6c842e514b7a61c8eb/Screen%20Shot%202026-02-26%20at%2010.24.42%20PM.png)
