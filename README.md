@@ -216,6 +216,7 @@ Preview
 ![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/5c3893dc77851ef17831a8947d0c30c27ab944bf/Screen%20Shot%202026-02-26%20at%2010.24.33%20PM.png)
 ![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/b7e3eb8d12bd2b51a38f6d6c842e514b7a61c8eb/Screen%20Shot%202026-02-26%20at%2010.24.42%20PM.png)
 ![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/57385bbfd67ae98261ab12fbaea1a15feed63202/Screen%20Shot%202026-02-26%20at%2010.25.31%20PM.png)
+![image alt](https://github.com/itsthanush/real-time-sync-engine-FSD-/blob/0da0317b859c697d82aa1abe3887ce607d3941cb/Screen%20Shot%202026-02-26%20at%2010.26.29%20PM.png)
 ## 📄 License
 
 ISC License — feel free to use, modify, and distribute.
