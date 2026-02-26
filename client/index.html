@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-Time Group Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Join Screen -->
+  <div class="container" id="joinScreen">
+    <h1>⚡ Real-Time Group Chat</h1>
+    <p class="subtitle">Enter your name and a room to get started</p>
+    <div class="input-area">
+      <input id="usernameInput" type="text" placeholder="Your name..." />
+      <input id="roomInput" type="text" placeholder="Room name (e.g. general)..." />
+      <button onclick="joinRoom()">Join</button>
+    </div>
+  </div>
+
+  <!-- Chat Screen (hidden until joined) -->
+  <div class="container" id="chatScreen" style="display:none">
+    <h1 id="roomTitle">⚡ Room: </h1>
+    <p class="subtitle" id="userLabel"></p>
+
+    <div class="input-area">
+      <input id="eventInput" type="text" placeholder="Type a message..." />
+      <button onclick="sendEvent()">Send</button>
+    </div>
+
+    <div class="event-box">
+      <h2>📋 Live Message Feed</h2>
+      <ul id="eventList"></ul>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
