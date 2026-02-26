@@ -55,7 +55,7 @@ real-time-sync-engine/
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/real-time-sync-engine.git
+git clone https://github.com/itsthanush/real-time-sync-engine.git
 cd real-time-sync-engine
 ```
 
