@@ -14,6 +14,7 @@ function joinRoom() {
   // Tell the server to put us in this room
   socket.emit('joinRoom', { username, room });
 
+  socket.currentRoom = room; // Store the current room on the client-side socket
   // Switch the UI from join screen to chat screen
   document.getElementById('joinScreen').style.display = 'none';
   document.getElementById('chatScreen').style.display = 'block';
@@ -37,6 +38,11 @@ socket.on('userJoined', ({ username }) => {
   addSystemMessage(`${username} joined the room`);
 });
 
+//say hello to the clinet when they connect
+socket.on('connect',()=>{
+  addSystemMessage('Welcome to the chat!' );
+});
+
 // Show a system notice when someone leaves
 socket.on('userLeft', ({ username }) => {
   addSystemMessage(`${username} left the room`);
@@ -57,6 +63,23 @@ function sendEvent() {
   // Just send to server — your own message will come back via eventReceived
   socket.emit('newEvent', event);
   input.value = '';
+}
+
+// Step 4: Leave the current room
+function leaveRoom() {
+  if (!myUsername || !socket.currentRoom) return; // Ensure user is in a room
+
+  socket.emit('leaveRoom');
+
+  // Reset UI
+  document.getElementById('chatScreen').style.display = 'none';
+  document.getElementById('joinScreen').style.display = 'block';
+  document.getElementById('eventList').innerHTML = '';
+  document.getElementById('usernameInput').value = ''; // Clear username input
+  document.getElementById('roomInput').value = '';     // Clear room input
+
+  myUsername = ''; // Clear client-side username
+  socket.currentRoom = ''; // Clear client-side room (though server handles actual leave)
 }
 
 function addEventToUI(event) {
@@ -87,4 +110,10 @@ document.addEventListener('keypress', (e) => {
       sendEvent();
     }
   }
+});
+
+// Event listener for the "Leave Room" button (assuming an element with id 'leaveRoomButton' exists in index.html)
+document.addEventListener('DOMContentLoaded', () => {
+  const leaveButton = document.getElementById('leaveRoomButton');
+  if (leaveButton) leaveButton.addEventListener('click', leaveRoom);
 });

@@ -11,7 +11,7 @@ app.use(express.static('../client'));
 
 // Store events per room
 let roomStates = {};
-
+// Socket.IO connection handler
 io.on('connection', (socket) => {
   console.log(`✅ User connected: ${socket.id}`);
 
@@ -33,6 +33,19 @@ io.on('connection', (socket) => {
 
     // Notify everyone else in the room that someone joined
     socket.to(room).emit('userJoined', { username });
+  });
+
+  // Client wants to leave the current room
+  socket.on('leaveRoom', () => {
+    const room = socket.currentRoom;
+    const username = socket.username;
+    if (room && username) {
+      console.log(` ${username} is leaving room: ${room}`);
+      socket.leave(room);
+      socket.to(room).emit('userLeft', { username });
+      socket.currentRoom = undefined; // Clear room from socket
+      socket.username = undefined;    // Clear username from socket
+    }
   });
 
   socket.on('newEvent', (event) => {
