@@ -1,4 +1,4 @@
-README.md# ⚡ Real-Time Event Sync Engine
+⚡ Real-Time Event Sync Engine
 
 A real-time multi-user chat and event synchronization app built with **Node.js**, **Express**, and **Socket.IO**. Multiple users can join named rooms and send messages that instantly appear for everyone in the same room — live, with no page refresh needed.
 
